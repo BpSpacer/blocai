@@ -1,0 +1,17 @@
+# This is a config for E2B sandbox template.
+# You can use template ID (6ooiy6kk1u87w7r8gi3d) or template name (blocai-test) to create a sandbox:
+
+# Python SDK
+# from e2b import Sandbox, AsyncSandbox
+# sandbox = Sandbox("blocai-test") # Sync sandbox
+# sandbox = await AsyncSandbox.create("blocai-test") # Async sandbox
+
+# JS SDK
+# import { Sandbox } from 'e2b'
+# const sandbox = await Sandbox.create('blocai-test')
+
+team_id = "8138c24b-e097-4053-9050-35a99f08ebb9"
+start_cmd = "/compile_page.sh"
+dockerfile = "e2b.Dockerfile"
+template_name = "blocai-test"
+template_id = "6ooiy6kk1u87w7r8gi3d"
