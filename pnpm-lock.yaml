@@ -110,6 +110,9 @@ importers:
       '@trpc/tanstack-react-query':
         specifier: ^11.4.3
         version: 11.4.3(@tanstack/react-query@5.81.5(react@19.1.0))(@trpc/client@11.4.3(@trpc/server@11.4.3(typescript@5.8.3))(typescript@5.8.3))(@trpc/server@11.4.3(typescript@5.8.3))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(typescript@5.8.3)
+      '@types/prismjs':
+        specifier: ^1.26.5
+        version: 1.26.5
       class-variance-authority:
         specifier: ^0.7.1
         version: 0.7.1
@@ -143,6 +146,9 @@ importers:
       next-themes:
         specifier: ^0.4.6
         version: 0.4.6(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      prismjs:
+        specifier: ^1.30.0
+        version: 1.30.0
       random-word-slugs:
         specifier: ^0.1.7
         version: 0.1.7
@@ -2086,6 +2092,9 @@ packages:
   '@types/pg@8.6.1':
     resolution: {integrity: sha512-1Kc4oAGzAl7uqUStZCDvaLFqZrW9qWSjXOmBfdgyBP5La7Us6Mg4GBvRlSoaZMhQF/zSj1C8CtKMBkoiT8eL8w==}
 
+  '@types/prismjs@1.26.5':
+    resolution: {integrity: sha512-AUZTa7hQ2KY5L7AmtSiqxlhWxb4ina0yd8hNbl4TWuqnv/pFP0nDMb3YrfSBf4hJVGLh2YEIBfKaBW/9UEl6IQ==}
+
   '@types/react-dom@19.1.6':
     resolution: {integrity: sha512-4hOiT/dwO8Ko0gV1m/TJZYk3y0KBnY9vzDh7W+DH17b2HFSOGgdj33dhihPeuy3l0q23+4e+hoXHV6hCC4dCXw==}
     peerDependencies:
@@ -3764,6 +3773,10 @@ packages:
     peerDependenciesMeta:
       typescript:
         optional: true
+
+  prismjs@1.30.0:
+    resolution: {integrity: sha512-DEvV2ZF2r2/63V+tK8hQvrR2ZGn10srHbXviTlcv7Kpzw8jWiNTqbVgjO3IY8RxrrOUF8VPMQQFysYYYv0YZxw==}
+    engines: {node: '>=6'}
 
   prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
@@ -6409,6 +6422,8 @@ snapshots:
       pg-protocol: 1.10.3
       pg-types: 2.2.0
 
+  '@types/prismjs@1.26.5': {}
+
   '@types/react-dom@19.1.6(@types/react@19.1.8)':
     dependencies:
       '@types/react': 19.1.8
@@ -8264,6 +8279,8 @@ snapshots:
       '@prisma/engines': 6.10.1
     optionalDependencies:
       typescript: 5.8.3
+
+  prismjs@1.30.0: {}
 
   prop-types@15.8.1:
     dependencies:
