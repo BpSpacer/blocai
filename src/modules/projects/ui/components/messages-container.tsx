@@ -25,8 +25,7 @@ export const MessagesContainer = ({
         projectId: projectId,
     },
     {
-        // TEMP LIVE MESSAGE UPDATE
-        refetchInterval: 5000,
+        refetchInterval: 2000,
     }
 ));
     useEffect(() => {
