@@ -15,12 +15,15 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { FileExplorer } from "@/components/file-explorer";
 import { UserControl } from "@/components/user-control";
+import { useAuth } from "@clerk/nextjs";
 
 interface Props {
     projectId: string;
 }
 
 export const ProjectView = ({ projectId }: Props) => {
+    const { has } = useAuth();
+    const hasProAccess = has?.({ plan: "pro" });
     const [activeFragment, setActiveFragment] = useState<Fragment | null>(null);
     const [tabState, setTabState] = useState<"preview" | "code">("preview");
 
@@ -66,13 +69,15 @@ export const ProjectView = ({ projectId }: Props) => {
                             </TabsList>
 
                             <div className="ml-auto flex items-center gap-x-2">
-                                <Button asChild size="sm" variant="tertiary" className="flex items-center gap-1.5 px-3">
-                                    <Link href="/pricing" className="flex items-center gap-1.5">
-                                        <CrownIcon className="w-4 h-4" />
-                                        <span className="text-sm font-medium">Upgrade</span>
-                                    </Link>
-                                </Button>
-                                <UserControl/>
+                                {!hasProAccess && (
+                                    <Button asChild size="sm" variant="tertiary" className="flex items-center gap-1.5 px-3">
+                                        <Link href="/pricing" className="flex items-center gap-1.5">
+                                            <CrownIcon className="w-4 h-4" />
+                                            <span className="text-sm font-medium">Upgrade</span>
+                                        </Link>
+                                    </Button>
+                                )}
+                                <UserControl />
                             </div>
 
                         </div>
@@ -80,11 +85,11 @@ export const ProjectView = ({ projectId }: Props) => {
                             {!!activeFragment && <FragmentWeb data={activeFragment} />}
                         </TabsContent>
                         <TabsContent value="code" className="min-h-0">
-                           {!!activeFragment?.files && (
-                            <FileExplorer
-                            files={activeFragment.files as {[path: string]: string}}
-                            />
-                           )}
+                            {!!activeFragment?.files && (
+                                <FileExplorer
+                                    files={activeFragment.files as { [path: string]: string }}
+                                />
+                            )}
                         </TabsContent>
                     </Tabs>
                 </ResizablePanel>
